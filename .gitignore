@@ -1,0 +1,6 @@
+.idea/
+cmake-build-debug/
+lib/
+main.cpp
+CMakeLists.txt
+Calosseum2021/
