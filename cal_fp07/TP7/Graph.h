@@ -295,6 +295,39 @@ Vertex<T> * Graph<T>::findSet(Vertex<T> * x) {
 template <class T>
 std::vector<Vertex<T>*> Graph<T>::calculateKruskal() {
     // TODO
+    int edgesAccepted=0;
+    std::vector<Edge<T>*> edges;
+
+    for (Vertex<T>* vertex:vertexSet) {makeSet(vertex); vertex->visited=false;}
+
+    for (Vertex<T>* vertex:vertexSet) {
+        for (Edge<T>* edge:vertex->adj) {
+            edges.push_back(edge);
+            edge->selected=false;
+        }
+    }
+
+    sort(edges.begin(),edges.end(), [](Edge<T>* edge1, Edge<T>* edge2){return edge1->weight<edge2->weight;});
+
+    while (edgesAccepted < vertexSet.size()-1 && !edges.empty()){
+
+        Edge<T>* edge = edges[0];
+        edges.erase(edges.begin());
+        Vertex<T>* vertex1 = findSet(edge->orig);
+        Vertex<T>* vertex2 = findSet(edge->dest);
+
+        if(vertex1!=vertex2) {
+            linkSets(vertex1,vertex2);
+            edge->selected=true;
+            edge->reverse->selected= true;
+            edgesAccepted++;
+        }
+
+    }
+
+    vertexSet[0]->path=NULL;
+    dfsKruskalPath(vertexSet[0]);
+
     return vertexSet;
 }
 
@@ -304,6 +337,14 @@ std::vector<Vertex<T>*> Graph<T>::calculateKruskal() {
 template <class T>
 void Graph<T>::dfsKruskalPath(Vertex<T> *v) {
     //TODO
+    v->visited=true;
+    for (Edge<T>* e:v->adj) {
+        if(!e->dest->visited && e->selected){
+            e->dest->path=e->orig;
+            dfsKruskalPath(e->dest);
+        }
+    }
+
 }
 
 #endif /* GRAPH_H_ */
