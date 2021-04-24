@@ -2,7 +2,7 @@
 Weekly exercises and the final projetc in C++ for the CAL curricular unit.
 
 ### Project Infos
-* **Date:** 2nd Year, 1st Semester, 2020/2021
+* **Date:** 2nd Year, 2st Semester, 2020/2021
 * **Course:** Concepção e Análise de Algoritmos (CAL) | Algorithm Design and Analysis
 * **Course Link:** https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=459479
 ### Disclaimer
