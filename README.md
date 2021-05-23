@@ -1,5 +1,5 @@
 # FEUP-AEDA 2020/2021
-Weekly exercises and the final projetc in C++ for the CAL curricular unit.
+Weekly exercises and the final project in C++ for the CAL curricular unit.
 
 ### Project Infos
 * **Date:** 2nd Year, 2st Semester, 2020/2021
