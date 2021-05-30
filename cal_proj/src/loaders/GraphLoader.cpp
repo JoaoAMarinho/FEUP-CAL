@@ -50,5 +50,5 @@ sf::Color GraphLoader::getCurrColor() {
 }
 
 void GraphLoader::nextColor() {
-    currColor = (currColor++) % colors.size();
+    currColor = (currColor+1) % colors.size();
 }
