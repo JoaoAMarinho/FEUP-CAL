@@ -1,4 +1,4 @@
-# FEUP-AEDA 2020/2021
+# FEUP-CAL 2020/2021
 Weekly exercises and the final project in C++ for the CAL curricular unit.
 
 ### Project Infos
